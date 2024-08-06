@@ -14,10 +14,16 @@ app.get("/", (req,res) => {
     res.send("welcom to nish server");
 })
 
+app.use("/uploads",express.static("uploads"));
+
 // routes
 import userRoutes from './routes/userRoutes.js';
+import courseRoutes from './routes/courseRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
 
 app.use('/api', userRoutes);
+app.use('/api', courseRoutes);
+app.use('/api', adminRoutes);
 
 
 
